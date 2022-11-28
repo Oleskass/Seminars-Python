@@ -21,30 +21,76 @@
 # “ед”: [“шт.”]
 # }
 
-# dict_1 = {'title': 'computer', 'price': 74999, 'quantity': 9,
-#           'units': 'pcs.'}
-# item_1 = (34001, {'title': 'computer', 'price': 74999, 'quantity': 9,
-#                   'units': 'pcs.'})
-# item_2 = (34002, {'title': 'phone', 'price': 56999, 'quantity': 23,
-#                   'units': 'pcs.'})
-# item_3 = (34003, {'title': 'printer', 'price': 8299, 'quantity': 6,
-#                   'units': 'pcs.'})
-# item_4 = (34004, {'title': 'headphones', 'price': 12499, 'quantity': 17,
-#                   'units': 'pcs.'})
-# list_of_items = [item_1, item_2, item_3, item_4]
+'''
+print('How many items you want to add? ')
+number_of_items = int(input())
+list_of_items = []
+i = 0
+while i < number_of_items:
+    print('Article:')
+    item_article = input()
+    my_dict = {'title': None, 'price': None, 'quantity': None, 'units': 'pcs.'}
+    print('Title:')
+    my_dict['title'] = input()
+    print('Price:')
+    my_dict['price'] = input()
+    print('Quantity:')
+    my_dict['quantity'] = input()
+    item = (item_article, my_dict)
+    list_of_items.append(item)
+    i += 1
 
-print('Article:')
-item_number = input()
-my_dict = {'title': None, 'price': None, 'quantity': None, 'units': 'pcs.'}
-print('Title:')
-my_dict['title'] = input()
-print('Price:')
-my_dict['price'] = input()
-print('Quantity:')
-my_dict['quantity'] = input()
-item = (item_number, my_dict)
+print('------------------------------')
+print(my_dict)
+print('ITEMS STRUCTURE:')
+for el in list_of_items:
+    print(el)
+'''
+# analytics = {}
+# for j in list_of_items:
+#     # for list_of_items[my_dict.keys()], list_of_items[my_dict.values()] \
+#     #         in j[1].items():
+#     analytics[list_of_items[my_dict.keys()]].append(my_dict.values())
+#
+# print(analytics)
 
-print(item)
+# Необходимо собрать аналитику о товарах. Реализовать словарь, в котором
+# каждый ключ — характеристика товара, например название, а значение — список
+# значений-характеристик, например список названий товаров.
+# Пример:
+# {
+# “название”: [“компьютер”, “принтер”, “сканер”],
+# “цена”: [20000, 6000, 2000],
+
+# test_dict = {'title': 'computer', 'price': 74999, 'quantity': 9,
+#              'units': 'pcs.'}
+# print(test_dict.keys())
+
+dict_1 = {'title': 'computer', 'price': 74999, 'quantity': 9,
+          'units': 'pcs.'}
+item_1 = (34001, {'title': 'computer', 'price': 74999, 'quantity': 9,
+                  'units': 'pcs.'})
+item_2 = (34002, {'title': 'phone', 'price': 56999, 'quantity': 23,
+                  'units': 'pcs.'})
+item_3 = (34003, {'title': 'printer', 'price': 8299, 'quantity': 6,
+                  'units': 'pcs.'})
+item_4 = (34004, {'title': 'headphones', 'price': 12499, 'quantity': 17,
+                  'units': 'pcs.'})
+list_of_items = [item_1, item_2, item_3, item_4]
+
+print('------------------------------')
+print(dict_1)
+print('ITEMS STRUCTURE:')
+for el in list_of_items:
+    print(el)
+
+print('--test---------------')
+for i in list_of_items:
+    dict_keys = [list_of_items[i][i].get('title')], \
+                [list_of_items[i][i].get('price')], \
+                [list_of_items[i][i].get('quantity')], \
+                [list_of_items[i][i].get('units')]
+    print(dict_keys)
 
 # # {'title': 'computer', 'price': 74999, 'quantity': 9, 'units': 'pcs.'}
 # print(list_of_items[0][1])
